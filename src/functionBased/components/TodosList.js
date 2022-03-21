@@ -1,6 +1,6 @@
-import React from "react";
-import ReactDom from "react-dom";
-import TodoItem from "./TodoItem";
+import React from 'react';
+import propTypes from 'prop-types';
+import TodoItem from './TodoItem';
 
 const TodosList = (props) => {
   const { todos } = props;
@@ -20,6 +20,13 @@ const TodosList = (props) => {
       ))}
     </ul>
   );
+};
+
+TodosList.propTypes = {
+  todos: propTypes.func.isRequired,
+  handleChangeProps: propTypes.func.isRequired,
+  setUpdate: propTypes.func.isRequired,
+  deleteTodoProps: propTypes.func.isRequired,
 };
 
 export default TodosList;
